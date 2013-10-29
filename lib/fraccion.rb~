@@ -23,14 +23,14 @@ class Fraccion
       end
    end
   
-  #comparador
-   def == (other)
-      if (@num == other.num) and (@den == other.den)
-         return true
-      else
-							return falsef1=@num/@den
-      end
-   end
+#   #comparador
+#    def == (other)
+#       if (@num == other.num) and (@den == other.den)
+#          return true
+#       else
+# 							return falsef1=@num/@den
+#       end
+#    end
 	
 	  #Valor absoluto
    def abs
@@ -49,7 +49,7 @@ class Fraccion
 
 	  #en formato flotante
    def to_f
-      fl=@num/@den
+      fl=((@num.to_f)/(@den.to_f))
    end
 
    #Suma de racionales
@@ -84,29 +84,37 @@ class Fraccion
       Fraccion.new(frac3.num % frac3.den,1)
    end
 
-   def < (other)
-      fl=@num/@den
-      fl1= other.num/other.den
-      fl < fl1
-   end
+#    def < (other)
+#       fl=@num/@den
+#       fl1= other.num/other.den
+#       fl < fl1
+#    end
 
-   def  > (other)
-      fl=@num/@den
-      fl1= other.num/other.den
-      fl > fl1
-   end
+#    def  > (other)
+#       fl=@num/@den
+#       fl1= other.num/other.den
+#       fl > fl1
+#    end
 
    def  >= (other)
-      fl=@num/@den
-      fl1= other.num/other.den
+      fl=(@num.to_f/@den.to_f)
+						fl1= other.to_f
       fl >= fl1
    end
 
    def <= (other)
-      fl=@num/@den
-      fl1= other.num/other.den
+      fl=(@num.to_f)/(@den.to_f)
+      fl1= other.to_f
       fl <= fl1
    end
-
+   #funcion que devuelve -1  si el operando de la izquierda es menor que el de la derecha,1 si el operando de la izquierda es mayor
+			# que el de la derecha,0 cuando ambos objetos son iguales,y nil en cualquier otro caso
+   def <=> (other)
+      ((@num.to_f)/(@den.to_f)) <=> other.to_f
+   end
+			
 end
+f1=Fraccion.new(5,2)
+f2=Fraccion.new(2,2)
+# puts f1 >= f2
 
