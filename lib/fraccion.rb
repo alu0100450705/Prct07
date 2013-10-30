@@ -1,7 +1,4 @@
-#raiz= ""
-# path = File.dirname(__FILE__)
-# require "#{path}/gcd.rb"
-require "./gcd.rb"
+require "./lib/gcd.rb"
 class Fraccion
    include Comparable
    attr_reader :num, :den # metodos de acceso (getters)
@@ -107,14 +104,13 @@ class Fraccion
       fl1= other.to_f
       fl <= fl1
    end
-   #funcion que devuelve -1  si el operando de la izquierda es menor que el de la derecha,1 si el operando de la izquierda es mayor
-			# que el de la derecha,0 cuando ambos objetos son iguales,y nil en cualquier otro caso
+   #funcion que devuelve -1  si el operando de la izquierda es menor que el de la derecha,1 si el operando de la izquierda es mayor  que el de la derecha,0 cuando ambos objetos son iguales,y nil en cualquier otro caso
    def <=> (other)
-      ((@num.to_f)/(@den.to_f)) <=> other.to_f
+      return (self.to_f <=> other.to_f)
    end
-			
+	
 end
-f1=Fraccion.new(5,2)
-f2=Fraccion.new(2,2)
-# puts f1 >= f2
-
+# frac= Fraccion.new(5,2) 
+# frac2= Fraccion.new(5,2)
+# puts a=frac <=> frac2
+# puts a.class

@@ -18,7 +18,7 @@ describe Fraccion do
       end
       
       it "un metodo to_s" do
-#          Fraccion.respond_to? :to_s
+         Fraccion.respond_to? :to_s
       end
       
       it "un metodo <=>" do
