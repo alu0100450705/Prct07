@@ -1,5 +1,4 @@
-#path = File.dirname(__FILE__)  #path relativo
-# Dir.chdir "../lib/"
+# -*- coding: utf-8 -*-
 require "./lib/fraccion.rb"
 
 describe Fraccion do
@@ -20,10 +19,70 @@ describe Fraccion do
       it "un metodo to_s" do
          (Fraccion.respond_to? :to_s).should_not be_false
       end
-      
+
+						it "un metodo to_f" do
+						   (@frac.respond_to? :to_f).should be_true
+						end
+
+						it "un metodo +" do
+						   (@frac.respond_to? :+).should be_true
+						end
+
+						it "un metodo -" do
+							(@frac.respond_to? :-).should be_true
+						end
+
+						it "un metodo *" do
+							(@frac.respond_to? :*).should be_true
+						end
+
+						it "un metodo /" do
+							(@frac.respond_to? :/).should be_true
+						end
+
+						it "un metodo /" do
+						   (@frac.respond_to? :%).should be_true
+						end
+
+						it "un metodo que calcule el valor absoluto de una fraccion" do
+         (@frac.respond_to? :abs).should be_true
+						end
+
+						it "un metodo que calcule el reciproco de una fraccion" do
+						   (@frac.respond_to? :reciprocal).should be_true
+						end
+
+						it "un metodo que calcule el opuesto de una fraccion" do
+						   (@frac.respond_to? :-@).should be_true
+						end
+
+
+						it "un metodo >" do
+							(Fraccion.respond_to? :>).should be_true
+						end
+
+						it "un metodo >=" do
+							(Fraccion.respond_to? :>=).should be_true
+						end
+
+						it "un metodo <" do
+							(Fraccion.respond_to? :<).should be_true
+						end
+
+						it "un metodo <=" do
+							(Fraccion.respond_to? :<=).should be_true
+						end
+
+						it "un metodo ==" do
+							(Fraccion.respond_to? :==).should be_true
+						end
+						
       it "un metodo <=>" do
 						   (Fraccion.respond_to? :<=>).should be_true
       end
+						
+
+						
    end
   
    describe "Debe estar en " do
@@ -73,7 +132,7 @@ describe Fraccion do
    end
   
    describe "Se debe calcular  " do
-      it " Valor absoluto con el metodo ABS" do
+      it " Valor absoluto con el metodo abs" do
          @frac2 = Fraccion.new(-9,-5)
          fracx = @frac2.abs
          fracx.num.should eq (9)

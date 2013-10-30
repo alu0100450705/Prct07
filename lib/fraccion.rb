@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 require "./lib/gcd.rb"
 class Fraccion
    include Comparable
@@ -47,7 +48,7 @@ class Fraccion
 	  #en formato flotante
    def to_f
       fl=((@num.to_f)/(@den.to_f))
-   end
+			end
 
    #Suma de racionales
    def +(other)
@@ -111,7 +112,10 @@ class Fraccion
 	
 end
 # frac= Fraccion.new(5,2)
+# puts frac.to_f
+# # puts Fraccion.respond_to? :"to_f"
+# puts frac.respond_to? "to_f"
 # puts Fraccion.respond_to? :to_s
 # frac2= Fraccion.new(5,2)
 # puts a=frac <=> frac2
-# puts a.class
+# puts Fraccion.respond_to? Fraccion.to_f
