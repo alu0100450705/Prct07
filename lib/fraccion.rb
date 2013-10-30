@@ -110,7 +110,8 @@ class Fraccion
    end
 	
 end
-# frac= Fraccion.new(5,2) 
+# frac= Fraccion.new(5,2)
+# puts Fraccion.respond_to? :to_s
 # frac2= Fraccion.new(5,2)
 # puts a=frac <=> frac2
 # puts a.class

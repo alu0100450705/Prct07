@@ -10,19 +10,19 @@ describe Fraccion do
 
    describe "# Debe exitir un " do
       it "numerador" do
-         defined?(@frac.num) 
+						   (defined?(@frac.num)).should be_true
       end
 
       it "denominador" do
-         defined?(@frac.den)
+						   (defined?(@frac.den)).should be_true
       end
       
       it "un metodo to_s" do
-         Fraccion.respond_to? :to_s
+         (Fraccion.respond_to? :to_s).should_not be_false
       end
       
       it "un metodo <=>" do
-	
+						   (Fraccion.respond_to? :<=>).should be_false
       end
    end
   
@@ -36,11 +36,13 @@ describe Fraccion do
   
    describe "Se debe invocar al " do
       it "metodo num() para obtener al numerador" do
-         @frac.num.should eq @frac.num()
+						   frac2 = Fraccion.new(5,2)
+         (@frac.num).should eq (frac2.num)
       end
 
       it "metodo den() para obtener al denominador" do
-         @frac.den.should eq @frac.den()
+							   frac2 = Fraccion.new(5,2)
+         (@frac.den).should eq (frac2.den)
       end
    end
   
