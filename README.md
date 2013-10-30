@@ -3,6 +3,7 @@ Práctica de Laboratorio #7 - VIRTUAL - EQUIPO
 Considere la clase Ruby para representar fracciones que ha implementado usando el Desarrollo dirigido por pruebas (Test Driven Development - TDD) usando como herramienta Rspec.
 
 1.-) Realice las modificaciones oportunas para contemplar el uso del módulo Comparable.
+    Se añadió el módulo comparable a la clase Fracción y se invalido al método <=> definido en el módulo comparable
 
 2.-) La clase se ha de compilar con la herramienta Travis de integración continua. Con ella se comprueba la portabilidad de los desarrollos entre distintas plataformas y versiones de Ruby.
 
