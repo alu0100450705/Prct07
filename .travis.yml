@@ -11,3 +11,4 @@ rvm:
   - ruby-head
   - jruby-head
   - ree
+  - 2.0.0
